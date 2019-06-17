@@ -8,7 +8,6 @@ export class PostsController {
 
   // private readonly demoService;
 
-  // 依赖注入的简单形式 且可直接读取方法
   constructor(private readonly demoService: DemoService) {
     this.demoService = demoService;
   }

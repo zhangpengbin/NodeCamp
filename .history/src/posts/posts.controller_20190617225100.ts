@@ -6,10 +6,9 @@ import { DemoService } from './providers/demo/demo.service';
 @Controller('posts')
 export class PostsController {
 
-  // private readonly demoService;
+  private readonly demoService;
 
-  // 依赖注入的简单形式 且可直接读取方法
-  constructor(private readonly demoService: DemoService) {
+  constructor(demoService: DemoService) {
     this.demoService = demoService;
   }
 
@@ -21,7 +20,7 @@ export class PostsController {
     console.log('query 参数', query);
 
 
-    return this.demoService.findAll()
+    return this.demoService.findAll();
   }
 
 
