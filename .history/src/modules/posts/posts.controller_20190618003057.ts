@@ -1,10 +1,8 @@
 import { Controller, Get, Req, Query, Param, Post, Body, HttpException, HttpStatus, ForbiddenException, NotFoundException, UseFilters } from '@nestjs/common';
 import { CreatePostDto } from './post.dto';
 import { DemoService } from './providers/demo/demo.service';
-import { DemoFilter } from '../../core/filters/demo.filter';
 
 @Controller('posts')
-// @UseFilters(DemoFilter)
 export class PostsController {
 
   // private readonly demoService;
@@ -30,10 +28,11 @@ export class PostsController {
   }
 
   @Post()
+  @UseFilters()
   store(@Body() post: CreatePostDto) {
     // 抛出异常
     // throw new HttpException('没有权限',HttpStatus.FORBIDDEN);
-    throw new ForbiddenException('没有钱权限');
+    // throw new ForbiddenException('没有钱权限');
     // throw new NotFoundException('找不到页面');
     console.log(post.title);
     this.demoService.create(post);

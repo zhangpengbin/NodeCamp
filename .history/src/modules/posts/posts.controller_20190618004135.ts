@@ -30,11 +30,12 @@ export class PostsController {
   }
 
   @Post()
+  
   store(@Body() post: CreatePostDto) {
     // 抛出异常
     // throw new HttpException('没有权限',HttpStatus.FORBIDDEN);
-    throw new ForbiddenException('没有钱权限');
-    // throw new NotFoundException('找不到页面');
+    // throw new ForbiddenException('没有钱权限');
+    throw new NotFoundException('找不到页面');
     console.log(post.title);
     this.demoService.create(post);
   }
