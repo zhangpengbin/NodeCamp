@@ -37,7 +37,7 @@ export class PostsController {
 
   @UsePipes(ValidationPipe)
 
-  @SetMetadata('roles',['member'])
+  @SetMetadata()
   store(@Body() post: CreatePostDto) {
     // 抛出异常
     // throw new HttpException('没有权限',HttpStatus.FORBIDDEN);

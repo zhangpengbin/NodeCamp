@@ -11,16 +11,6 @@ export class DemoMiddleware implements NestMiddleware {
       ]
     };
 
-    if(req.header('x-demo') === 'secret'){
-      req.user = {
-        roles:[
-          'member'
-        ]
-      }
-    }
-
-
-
     console.log('hello  ~ ~ ~');
     next();
   }
