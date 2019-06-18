@@ -1,10 +1,10 @@
-import { IsString,IsArray, IsNumber } from 'class-validator';
+import { IsString,IsArray } from 'class-validator';
 
 export class CreatePostDto {
   @IsString()
   readonly title:String;
   @IsString()
   readonly name:String;
-  @IsNumber()
+  @IsArray()
   age:Number
 }
