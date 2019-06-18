@@ -8,7 +8,6 @@ export class DemoRolesGuard implements CanActivate {
   ): boolean | Promise<boolean> | Observable<boolean> {
 
     console.log('handler', context.getHandler());
-    console.log('handler', context.getClass());
     return false;
   }
 }
