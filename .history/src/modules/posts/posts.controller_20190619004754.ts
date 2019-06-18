@@ -5,7 +5,7 @@ import { DemoFilter } from '../../core/filters/demo.filter';
 import { DemoAuthGuard } from '../../core/guards/demo-auth.guard';
 
 @Controller('posts')
-// @UseGuards(DemoAuthGuard)
+@UseGuards(DemoAuthGuard)
 // @UseFilters(DemoFilter)
 export class PostsController {
 
