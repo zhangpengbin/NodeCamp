@@ -3,7 +3,7 @@ import { CreatePostDto } from './post.dto';
 import { DemoService } from './providers/demo/demo.service';
 import { DemoFilter } from '../../core/filters/demo.filter';
 import { DemoAuthGuard } from '../../core/guards/demo-auth.guard';
-import { Roles } from '../../core/decorators/roles.decorator';
+import { Roles } from 'src/core/decorators/roles.decorator';
 
 @Controller('posts')
 // @UseGuards(DemoAuthGuard)
