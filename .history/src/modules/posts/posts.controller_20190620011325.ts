@@ -39,7 +39,7 @@ export class PostsController {
   }
 
   @Get(':id')
-  show(@Param('id', ParseIntPipe,DemoPipe) id) {
+  show(@Param('id', ParseIntPipe) id) {
 
     console.log('id', typeof id);
     return {
@@ -54,7 +54,7 @@ export class PostsController {
   // @SetMetadata('roles',['member'])
 
   @Roles('member')
-  store(@Body() post: CreatePostDto, @User('Night') user) {
+  store(@Body(DemoPipe) post: CreatePostDto, @User('Night') user) {
     // 抛出异常
     // throw new HttpException('没有权限',HttpStatus.FORBIDDEN);
     // throw new ForbiddenException('没有钱权限');
