@@ -53,7 +53,7 @@ export class PostsController {
   // @SetMetadata('roles',['member'])
 
   @Roles('member')
-  store(@Body() post: CreatePostDto, @User('Night') user) {
+  store(@Body() post: CreatePostDto, @User() user) {
     // 抛出异常
     // throw new HttpException('没有权限',HttpStatus.FORBIDDEN);
     // throw new ForbiddenException('没有钱权限');
