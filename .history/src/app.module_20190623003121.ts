@@ -7,7 +7,17 @@ import { PostController } from './modules/post/post.controller';
 
 @Module({
   imports: [
-    TypeOrmModule.forRoot(),
+    TypeOrmModule.forRoot({
+      type:'mysql',
+      host: 'localhost',
+      port: 3306,
+      username:'nest',
+      password:'password',
+      database:'nest',
+      synchronize:true,
+      logging: true,
+      entities:[__dirname + '/**/*.entity{.ts,.js}']
+    }),
     PostModule
   ],
   controllers: [AppController, PostController],
