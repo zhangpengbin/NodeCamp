@@ -10,7 +10,7 @@ import { PostController } from './modules/post/post.controller';
     TypeOrmModule.forRoot(),
     PostModule
   ],
-  controllers: [AppController],
+  controllers: [PostController],
   providers: [AppService],
 })
 export class AppModule {}

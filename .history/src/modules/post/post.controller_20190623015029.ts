@@ -28,7 +28,7 @@ export class PostController {
 
 
   @Put(':id')
-  async update(@Param('id') id:string, @Body() data:Partial<PostDto>){
+  async update(@Param('id') id:string, @Body() data){
     return await this.postService.update(id,data);
   }
 

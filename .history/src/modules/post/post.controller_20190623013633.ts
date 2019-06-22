@@ -1,7 +1,6 @@
 import { Controller, Post, Body, Get, Param, Put, Delete } from '@nestjs/common';
 import { async } from 'rxjs/internal/scheduler/async';
 import { PostService } from './post.service';
-import { PostDto } from './post.dto';
 
 @Controller('posts')
 export class PostController {
@@ -11,8 +10,7 @@ export class PostController {
 
 
   @Post()
-  async store(@Body() data:PostDto) {
-    
+  async store(@Body() data) {
     return await this.postService.store(data);
   }
 
@@ -28,7 +26,7 @@ export class PostController {
 
 
   @Put(':id')
-  async update(@Param('id') id:string, @Body() data:Partial<PostDto>){
+  async update(@Param('id') id:string, @Body() data){
     return await this.postService.update(id,data);
   }
 
