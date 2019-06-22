@@ -10,12 +10,13 @@ import { PostController } from './modules/post/post.controller';
     TypeOrmModule.forRoot({
       type:'mysql',
       host: 'localhost',
-      port: 3306,
+      port: 3308,
       username:'nest',
       password:'password',
       database:'nest',
       synchronize:true,
-      entities:[__dirname + '/**/*.entity.ts']
+      logging: true,
+      entities:[__dirname + '/**/*.entity{.ts,.js}']
     }),
     PostModule
   ],
