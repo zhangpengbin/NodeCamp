@@ -8,7 +8,7 @@ import { PostController } from './modules/post/post.controller';
 @Module({
   imports: [
     TypeOrmModule.forRoot(),
-    PostModule
+    PostModule,
   ],
   controllers: [AppController],
   providers: [AppService],
